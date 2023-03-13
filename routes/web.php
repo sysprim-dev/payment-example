@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->name('home');
+
+Route::name('documentations.')->prefix('documentations')->group(function () {
+    Route::controller(LoginController::class)->group(function () {
+        Route::get('login', 'create')->name('login.create');
+        Route::post('login', 'store')->name('login.store');
+    });
 });

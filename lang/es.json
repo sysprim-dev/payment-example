@@ -6,5 +6,7 @@
     "Info_Document_Project": "Ponemos a su disposición nuestra pasarela directamente en producción.",
     "Info_Document": "Laravel tiene una documentación maravillosa que cubre todos los aspectos del marco. Si usted esta un recién llegado o tiene experiencia previa con Laravel, le recomendamos leer nuestra documentación de principio a fin.",
     "Documentation_api": "Documentación sobre la API's",
-    "Info_Document_Api": "Contamos con una documentación sobre los endpoints disponibles, le recomendamos leer nuestra documentación."
+    "Info_Document_Api": "Contamos con una documentación sobre los endpoints disponibles, le recomendamos leer nuestra documentación.",
+    "Login": "Login",
+    "Save": "Guardar"
 }
