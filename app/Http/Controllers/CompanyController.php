@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\LoginStoreRequest;
-use Illuminate\Http\Request;
+use App\Http\Requests\CompanyStoreRequest;
 use Illuminate\Support\Facades\Http;
 
 class CompanyController extends Controller
@@ -13,7 +12,7 @@ class CompanyController extends Controller
         return view('company');
     }
 
-    public function store(Request $request)
+    public function store(CompanyStoreRequest $request)
     {
         $response = Http::acceptJson()->withOptions([
             'verify' => false,
