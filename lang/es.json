@@ -8,5 +8,7 @@
     "Documentation_api": "Documentación sobre la API's",
     "Info_Document_Api": "Contamos con una documentación sobre los endpoints disponibles, le recomendamos leer nuestra documentación.",
     "Login": "Login",
-    "Save": "Enviar"
+    "Save": "Enviar",
+    "bearer_token": "Bearer Token",
+    "GetCode": "Obtener codigo de la empresa"
 }

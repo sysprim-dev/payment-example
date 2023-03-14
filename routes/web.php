@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -23,5 +24,9 @@ Route::name('documentations.')->prefix('documentations')->group(function () {
     Route::controller(LoginController::class)->group(function () {
         Route::get('login', 'create')->name('login.create');
         Route::post('login', 'store')->name('login.store');
+    });
+    Route::controller(CompanyController::class)->group(function () {
+        Route::get('company', 'create')->name('company.create');
+        Route::post('company', 'store')->name('company.store');
     });
 });

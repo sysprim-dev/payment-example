@@ -8,7 +8,8 @@
     <div class="py-12 px-3">
         <div class="sm:max-w-md mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow rounded-lg">
-                <form method="post" action="{{ route('documentations.login.create') }}" class="mt-6 space-y-6">
+                <form method="post" action="{{ route('documentations.login.create') }}" autocomplete="off"
+                      class="mt-6 space-y-6">
                     @csrf
                     <div>
                         <x-input-label for="email" :value="__('Email')"/>

@@ -24,6 +24,6 @@ class LoginController extends Controller
         if ($response['status'] != 'success') {
             return back()->with('error', $response['message']);
         }
-        return back()->with('api-token', 'Se ha registrado con exito! asegurece de copiar y almacenar su token: ' . $response['data']['access_token']);
+        return back()->with('api-token', 'Se ha registrado con exito! asegurece de copiar y almacenar su bearer token: ' . $response['data']['access_token']);
     }
 }
