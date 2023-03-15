@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CompanyStoreRequest;
 use App\Http\Requests\InvoiceStoreMassiveRequest;
 use App\Http\Requests\InvoiceStoreRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use Mockery\Undefined;
+
 
 class InvoiceController extends Controller
 {
@@ -139,5 +138,23 @@ class InvoiceController extends Controller
             return back()->with('error', $response['message']);
         }
         return back()->with('api-token-massive', $response['data']['invoiceSuccess']);
+    }
+
+    public function index(Request $request)
+    {
+        if (!$request->has('bearer_token') || !$request->has('company_token')) {
+            return view('invoices.index');
+        }
+        $response = Http::acceptJson()
+            ->withOptions(['verify' => false])
+            ->withToken($request->bearer_token)
+            ->withHeaders(['Company-Token' => $request->company_token])
+            ->get(config('app.api-url') . 'invoice')->json();
+
+        if (!isset($response['status']) || $response['status'] != 'success') {
+            return back()->with('error', $response['message']);
+        }
+
+        return view('invoices.index', ['invoices'=> $response['data']['invoices']]);
     }
 }
