@@ -1,14 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Invoices_Index') }}
+            {{ __('Payments_Index') }}
         </h2>
     </x-slot>
 
     <div class="py-12 px-3">
         <div class="sm:max-w-xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow rounded-lg">
-                <form method="get" action="{{ route('documentations.invoices.index') }}" autocomplete="off"
+                <form method="get" action="{{ route('documentations.payments.index') }}" autocomplete="off"
                       class="mt-6 space-y-6">
                     @csrf
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -32,7 +32,7 @@
             </div>
         </div>
     </div>
-    @if(!is_null($invoices))
+    @if(!is_null($payments))
         <div class="py-2 px-3">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
                 <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow rounded-lg">
@@ -48,7 +48,7 @@
                                     {{__('Status')}}
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    {{__('customer_document')}}
+                                    {{__('ref')}}
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     {{__('amount')}}
@@ -59,23 +59,23 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($invoices as $invoice)
+                            @foreach($payments as $payment)
                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     <th scope="row"
                                         class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        {{$invoice['code']}}
+                                        {{$payment['code']}}
                                     </th>
                                     <td class="px-6 py-4">
-                                        {{$invoice['status']}}
+                                        {{$payment['status']}}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{$invoice['customer_document']}}
+                                        {{$payment['ref']}}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{$invoice['amount']}} {{$invoice['coin_id']}}
+                                        {{$payment['amount']}} {{$payment['coin_id']}}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{$invoice['created_at']}}
+                                        {{$payment['created_at']}}
                                     </td>
                                 </tr>
                             @endforeach

@@ -13,9 +13,11 @@
     "company_token": "Company Token",
     "GetCode": "Obtener codigo de la empresa",
     "Invoices": "Facturas",
+    "Payments": "Pagos",
     "Invoice": "Factura",
     "Invoices_Create": "Crear Facturas",
     "Invoices_Index": "Listar Facturas",
+    "Payments_Index": "Listar Pagos",
     "Invoices_Massive": "Facturas Masivas",
     "ref_transaction": "Referencia Transaccion",
     "customer_document": "Identificacion Cliente",
@@ -40,5 +42,6 @@
     "Detail": "Detalle",
     "Code": "Codigo",
     "Status": "Estatus",
+    "logout": "Logout",
     "created_at": "Fecha de creacion"
 }

@@ -143,7 +143,7 @@ class InvoiceController extends Controller
     public function index(Request $request)
     {
         if (!$request->has('bearer_token') || !$request->has('company_token')) {
-            return view('invoices.index');
+            return view('invoices.index', ['invoices' => null]);
         }
         $response = Http::acceptJson()
             ->withOptions(['verify' => false])
@@ -155,6 +155,6 @@ class InvoiceController extends Controller
             return back()->with('error', $response['message']);
         }
 
-        return view('invoices.index', ['invoices'=> $response['data']['invoices']]);
+        return view('invoices.index', ['invoices' => $response['data']['invoices']]);
     }
 }
