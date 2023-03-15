@@ -32,6 +32,8 @@ Route::name('documentations.')->prefix('documentations')->group(function () {
     Route::controller(InvoiceController::class)->group(function () {
         Route::get('invoices/create', 'create')->name('invoices.create');
         Route::post('invoices', 'store')->name('invoices.store');
+        Route::get('invoices/create/massive', 'massive')->name('invoices.massive');
+        Route::post('invoices/massive', 'storeMassive')->name('invoices.store.massive');
         Route::get('invoices', 'index')->name('invoices.index');
     });
 });

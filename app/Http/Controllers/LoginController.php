@@ -21,7 +21,7 @@ class LoginController extends Controller
             'password' => $request->password,
         ])->json();
 
-        if ($response['status'] != 'success') {
+        if (!isset($response['status']) || $response['status'] != 'success') {
             return back()->with('error', $response['message']);
         }
         return back()->with('api-token', 'Se ha registrado con exito! asegurece de copiar y almacenar su bearer token: ' . $response['data']['access_token']);

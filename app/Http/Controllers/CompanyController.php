@@ -20,7 +20,7 @@ class CompanyController extends Controller
             ->get(config('app.api-url') . 'get-token-company')
             ->json();
 
-        if ($response['status'] != 'success') {
+        if (!isset($response['status']) || $response['status'] != 'success') {
             return back()->with('error', $response['message']);
         }
         return back()->with('api-token', 'Se ha registrado con exito! asegurece de copiar y almacenar su Company_Token: ' . $response['data']['value']);

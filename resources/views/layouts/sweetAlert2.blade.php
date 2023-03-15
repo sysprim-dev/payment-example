@@ -68,3 +68,12 @@
     })
   </script>
 @endif
+@if (\Session::has('api-token-massive'))
+  <script type="text/javascript">
+    Swal.fire({
+      icon: 'success',
+      title: '¡Todo salió bien',
+        text: '@foreach (\Session::get('api-token-massive') as $data){{ $data['payment-link'] }}<br>@endforeach',
+    })
+  </script>
+@endif

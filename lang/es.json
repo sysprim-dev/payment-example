@@ -13,8 +13,10 @@
     "company_token": "Company Token",
     "GetCode": "Obtener codigo de la empresa",
     "Invoices": "Facturas",
+    "Invoice": "Factura",
     "Invoices_Create": "Crear Facturas",
     "Invoices_Index": "Listar Facturas",
+    "Invoices_Massive": "Facturas Masivas",
     "ref_transaction": "Referencia Transaccion",
     "customer_document": "Identificacion Cliente",
     "customer_name": "Nombre Cliente",
@@ -34,5 +36,6 @@
     "quantity": "Cantidad",
     "recharge": "Recargo",
     "discount": "Descuento",
-    "amount_item": "Monto total del item"
+    "amount_item": "Monto total del item",
+    "Detail": "Detalle"
 }

@@ -41,6 +41,9 @@
                                 <x-dropdown-link :href="route('documentations.invoices.create')">
                                     {{ __('Invoices_Create') }}
                                 </x-dropdown-link>
+                                <x-dropdown-link :href="route('documentations.invoices.massive')">
+                                    {{ __('Invoices_Massive') }}
+                                </x-dropdown-link>
                                 <x-dropdown-link :href="route('documentations.invoices.index')">
                                     {{ __('Invoices_Index') }}
                                 </x-dropdown-link>
@@ -88,6 +91,9 @@
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('documentations.invoices.create')">
                     {{ __('Invoices_Create') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('documentations.invoices.massive')">
+                    {{ __('Invoices_Massive') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('documentations.invoices.index')">
                     {{ __('Invoices_Index') }}
